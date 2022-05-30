@@ -58,6 +58,7 @@ Open the application on your browser
 
 ---
 
+
 ## Dependencies
 >* python3.8
 >* Django 3.1.2
