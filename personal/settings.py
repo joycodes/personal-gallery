@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'gallery.apps.GalleryConfig',
     'bootstrap3'
 ]
 
@@ -81,12 +82,18 @@ WSGI_APPLICATION = 'personal.wsgi.application'
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
+        #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #    'NAME': config('DB_NAME'),
+        #    'USER': config('DB_USER'),
+        #    'PASSWORD': config('DB_PASSWORD'),
+        #    'HOST': config('DB_HOST'),
+        #    'PORT': '',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'personal',
+        'USER': 'joyce',
+        'PASSWORD':'root',
+        'HOST':'localhost',
+        'PORT': 5432,
        }
        
    }
