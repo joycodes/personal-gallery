@@ -2,7 +2,6 @@ import tempfile
 from django.test import TestCase
 from .models import Location, Category, Image
 from PIL import Image as Picture
-from django.test import TestCase
 from django.test import override_settings
 
 # Create your tests here.

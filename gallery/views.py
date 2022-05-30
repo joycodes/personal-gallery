@@ -1,8 +1,8 @@
+import numpy as np
 from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Image, Category, Location
 from django.core.exceptions import ObjectDoesNotExist
-import numpy as np
 
 
 # Create your views here.
