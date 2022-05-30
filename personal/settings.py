@@ -46,6 +46,11 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'bootstrap3'
 ]
+cloudinary.config(
+    cloud_name = "dbq3a2gb7",
+    api_key = "432655289412978",
+    api_secret = "eD815xpbeJtuISo6wupSKHgVSa4",
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,18 +87,12 @@ WSGI_APPLICATION = 'personal.wsgi.application'
 if config('MODE')=="dev":
    DATABASES = {
        'default': {
-        #    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #    'NAME': config('DB_NAME'),
-        #    'USER': config('DB_USER'),
-        #    'PASSWORD': config('DB_PASSWORD'),
-        #    'HOST': config('DB_HOST'),
-        #    'PORT': '',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'personal',
-        'USER': 'joyce',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT': 5432,
+           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+           'NAME': config('DB_NAME'),
+           'USER': config('DB_USER'),
+           'PASSWORD': config('DB_PASSWORD'),
+           'HOST': config('DB_HOST'),
+           'PORT': '',
        }
        
    }
