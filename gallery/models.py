@@ -18,6 +18,7 @@ class Category(models.Model):
     def update_category(cls,id,name):
         cls.objects.filter(id = id).update(name = name)
 
+
 class Location(models.Model):
     name = models.CharField(max_length = 30)
 

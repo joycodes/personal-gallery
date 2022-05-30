@@ -2,7 +2,6 @@
 
 # PhotoGallery
 
-
 ---
 
 ## Author
