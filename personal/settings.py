@@ -1,9 +1,12 @@
 
 from pathlib import Path
-import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 MODE=config("MODE", default="dev")
 
@@ -32,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery',
+    'gallery.apps.GalleryConfig',
     'bootstrap3',
     'cloudinary',
 ]
@@ -158,3 +161,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
+
+cloudinary.config( 
+  cloud_name = "dbq3a2gb7", 
+  api_key = "432655289412978", 
+  api_secret = "eD815xpbeJtuISo6wupSKHgVSa4",
+)
