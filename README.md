@@ -12,6 +12,8 @@
 ## Description
 >This is a Django application for a personal gallery that allows an admin to display photos for others to see.
 
+![image](./media/images/screenshot-landing.png)
+
 ---
 
 ## User Story  
