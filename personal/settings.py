@@ -1,24 +1,19 @@
-
 from pathlib import Path
+import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
-import os
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-MODE=config("MODE", default="dev")
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MODE=config("MODE", default="dev")
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY',default=1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -35,11 +30,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery.apps.GalleryConfig',
-    'bootstrap3',
-    'cloudinary',
+    'gallery',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -66,7 +58,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-
             ],
         },
     },
@@ -74,11 +65,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'personal.wsgi.application'
 
-## Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Database
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
+# development
 if config('MODE')=="dev":
-   DATABASES = {
+    DEBUG = 'True'
+    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
            'NAME': config('DB_NAME'),
@@ -97,15 +91,13 @@ else:
        )
    }
 
+ALLOWED_HOSTS =['**']
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS =['.localhost','.herokuapp.com','127.0.0.1']
-
-
-
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -138,32 +130,23 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = [BASE_DIR, 'static']
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # configuring the location for media
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
-
-cloudinary.config( 
-  cloud_name = "dbq3a2gb7", 
-  api_key = "432655289412978", 
-  api_secret = "eD815xpbeJtuISo6wupSKHgVSa4",
-)
