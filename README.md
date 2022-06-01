@@ -68,7 +68,6 @@ Open the application on your browser
 ## Technologies Used
 >* Bootstrap.
 >* Python.
->* Cloudinary.
 
 
  
