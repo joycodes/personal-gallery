@@ -13,8 +13,7 @@
 >This is a Django application for a personal gallery that allows an admin to display photos for others to see.
 
 ![image](./media/images/landing-screngrab.png)
-
-![image](./media/images/screengrab2.png.png)
+![image](./media/images/screengrab2.png)
 
 
 ---
