@@ -25,7 +25,7 @@
 ---
 
 ## Live Link
-[View Site](https://picturegall3ry.herokuapp.com/)
+[View Site](https://joycegallery.herokuapp.com/)
 
 ***
 
