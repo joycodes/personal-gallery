@@ -8,7 +8,7 @@ from decouple import config,Csv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODE='prod'
+MODE='dev'
 
 
 # Quick-start development settings - unsuitable for production
@@ -18,7 +18,7 @@ MODE='prod'
 SECRET_KEY = config('SECRET_KEY',default=1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 

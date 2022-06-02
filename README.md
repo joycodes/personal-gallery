@@ -30,7 +30,7 @@
 ---
 
 ## Live Link
-[View Site](https://joycegallery.herokuapp.com/)
+[View Site](https://picgall3ry.herokuapp.com/)
 
 ***
 
