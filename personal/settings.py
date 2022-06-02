@@ -8,7 +8,7 @@ from decouple import config,Csv
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-MODE = 'prod'
+MODE='prod'
 
 
 # Quick-start development settings - unsuitable for production
@@ -20,7 +20,7 @@ SECRET_KEY = config('SECRET_KEY',default=1)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'personal.wsgi.application'
 
 # development
 if MODE =="dev":
-    DEBUG='True'
+    # DEBUG='True'
     DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -90,7 +90,7 @@ else:
     DATABASES = {}
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-ALLOWED_HOSTS='0.0.0.0','localhost','127.0.0.1', 'https://joycegallery.herokuapp.com/'
+ALLOWED_HOSTS=['localhost','127.0.0.1', 'https://picgall3ry.herokuapp.com/']
 
 
 # Password validation
