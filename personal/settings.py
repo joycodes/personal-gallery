@@ -18,7 +18,7 @@ MODE='prod'
 SECRET_KEY = config('SECRET_KEY',default=1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
@@ -73,7 +73,6 @@ WSGI_APPLICATION = 'personal.wsgi.application'
 
 # development
 if MODE =="dev":
-    # DEBUG='True'
     DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
