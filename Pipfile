@@ -4,22 +4,16 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-whitenoise = "**"
-dj-database-url = "**"
-gunicorn = "**"
-psycopg2 = "**"
-python-decouple = "**"
-pytz = "**"
-fields = "**"
-django-heroku = "**"
-asgiref = "**"
-"backports.zoneinfo" = "**"
-certifi = "**"
-six = "**"
-sqlparse = "**"
-urllib3 = "**"
-Django = "**"
-Pillow = "**"
+django = "*"
+whitenoise = "*"
+pillow = "*"
+django-heroku = "*"
+python-decouple = "*"
+dj-database-url = "*"
+psycopg2 = "*"
+pytz = "*"
+gunicorn = "*"
+fields = "*"
 
 [dev-packages]
 
