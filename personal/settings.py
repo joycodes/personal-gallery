@@ -71,7 +71,6 @@ WSGI_APPLICATION = 'personal.wsgi.application'
 
 # development
 if config('MODE')=="dev":
-    DEBUG = 'False'
     DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
