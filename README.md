@@ -23,7 +23,7 @@
   
 * View different photos that interest them  
 * Click a single image to expand it and view the details of that photo  
-* Search for different categories   
+* Search for different categories (Categories available are Food, Technology, Cars, Animals)
 * Copy a link to the photo to share with my friends.  
 * View photos based on the location they were taken.  
 
