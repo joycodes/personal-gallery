@@ -64,7 +64,7 @@ Open the application on your browser
 
 ## Dependencies
 >* python3.8
->* Django 3.1.2
+>* Django 4.0.5
 >* virtual environment
 >* heroku
 ***
